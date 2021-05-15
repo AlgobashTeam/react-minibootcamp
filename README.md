@@ -55,3 +55,7 @@ React lifecycle pada hooks akan mengikuti runutan seperti ini
 ## Routing and Lifecycle for Authentication
 ## Global State & Custom Hooks
 ## Custom Hooks & Testing
+
+
+
+Imperative vs Declarative
