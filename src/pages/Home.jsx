@@ -10,6 +10,8 @@ export default function Home () {
       <Link to="/login">Login Benar</Link>
       <br />
       <a href="/login">Login Salah</a>
+      <br />
+      <a href="/blog">Blog</a>
   </Authenticated>
 );
 }

@@ -28,6 +28,7 @@ export default function BlogList() {
         return (
           <>
             <Link to={"/blog/" + item.id} >{item.title}</Link>
+            <Link to={"/blog/edit/" + item.id} > Edit</Link>
             <br />
           </>
         );
