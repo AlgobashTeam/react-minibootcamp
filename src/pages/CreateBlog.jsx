@@ -16,6 +16,9 @@ export default function CreateBlog() {
       ...status,
       loading: true,
     })
+
+    console.log(status);
+
     const res = await axios.post('https://jsonplaceholder.typicode.com/posts', {
       title: title,
       body: body,
@@ -40,7 +43,7 @@ export default function CreateBlog() {
     event.preventDefault();
     sendDataToServer(title, body);
   }
-  
+
 
   // Loading component ketika status menjadi loading
   if (status.loading) {
@@ -68,7 +71,7 @@ export default function CreateBlog() {
         <button type="submit">
           Save
         </button>
-        </form>
+      </form>
     </>
   );
 }
