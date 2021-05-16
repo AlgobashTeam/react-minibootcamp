@@ -1,7 +1,17 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
+
+import { StateUserContext, DispatchUserContext } from '../reducers/user';
 
 export default function CreateBlog() {
+
+  const stateUser = useContext(StateUserContext);
+  const dispatchUser = useContext(DispatchUserContext);
+
+  useEffect(() => {
+    console.log(stateUser);
+  }, [stateUser]);
+
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [status, setStatus] = useState({

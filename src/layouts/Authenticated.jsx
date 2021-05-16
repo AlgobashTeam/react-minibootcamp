@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
+import AddUserInfo from '../components/AddUserInfo';
+
 export default function Authenticated (props) {
   //const [redirectPath, setRedirectPath] = useState('');
   const history = useHistory();
@@ -38,6 +40,7 @@ export default function Authenticated (props) {
 
   return (
     <>
+      <AddUserInfo/>
       {props.children}
     </>
   );

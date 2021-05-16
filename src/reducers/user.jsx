@@ -1,11 +1,12 @@
-import React, { createContext, useReducer, FunctionComponent, ReactNode } from 'react';
+import React, { createContext, useReducer  } from 'react';
 
 const initialState = {
-  email: '',
+  email: 'budi@gmail.com',
+  name: 'budi',
 };
 
-const StateNotificationContext = createContext(initialState);
-const DispatchNotificationContext = createContext(() => { });
+const StateUserContext = createContext(initialState);
+const DispatchUserContext = createContext(() => { });
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -15,10 +16,16 @@ const reducer = (state, action) => {
         email: action.payload
       };
     }
+    case 'set_name': {
+      return {
+        ...state,
+        name: action.payload,
+      }
+    }
     case 'remove_email': {
       return {
         ...state,
-        token: '',
+        email: '',
       };
     }
     default:
@@ -26,19 +33,20 @@ const reducer = (state, action) => {
   }
 };
 
-const NotificationProvider = (props) => {
+const UserProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <StateNotificationContext.Provider value={state}>
-      <DispatchNotificationContext.Provider value={dispatch}>
+    <StateUserContext.Provider value={state}>
+      <DispatchUserContext.Provider value={dispatch}>
         {props.children}
-      </DispatchNotificationContext.Provider>
-    </StateNotificationContext.Provider>
+      </DispatchUserContext.Provider>
+    </StateUserContext.Provider>
   );
 };
 
 export {
-  NotificationProvider,
-  StateNotificationContext,
-  DispatchNotificationContext
+  UserProvider, // Wrapper untuk component yang akan memakai reducer tersebut.
+  StateUserContext, // Getter Nilai dari state nya
+  DispatchUserContext, // Setter dari state nya
 };
+

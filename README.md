@@ -51,6 +51,10 @@ React lifecycle pada hooks akan mengikuti runutan seperti ini
 3. Jalankan useEffect (didmount dan didChange)
 4. Jalankan return function dari useEffect (willUnmount) jika komponen akan dihapus
 
+Event yang paling sering dipakai ada 3:
+<form onSubmit/>
+<button onClick/>
+<input onChange/> atau <textarea/>
 
 ## Routing and Lifecycle for Authentication
 ## Global State & Custom Hooks
@@ -62,8 +66,9 @@ Global State vs State:
 4. State hanya punya 1 setter tetapi global state punya beberapa setter
 Global state juga disebut dengan reducer
 
+Aturan Global State
+1. Semakin komplex reducernya maka dia harus lebih dekat pada <App/>
+
 ## Custom Hooks & Testing
 
 
-
-Imperative vs Declarative
