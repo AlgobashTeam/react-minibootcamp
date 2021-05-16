@@ -54,6 +54,14 @@ React lifecycle pada hooks akan mengikuti runutan seperti ini
 
 ## Routing and Lifecycle for Authentication
 ## Global State & Custom Hooks
+Global State -> State yang dapat diakses oleh 2 komponen sekaligus
+Global State vs State:
+1. State cuma bisa diakses oleh 1 komponen, global state banyak
+2. State akan selalu lebih performing dibandingkan global state
+3. Membutuhkan custom hook untuk melakukan global state
+4. State hanya punya 1 setter tetapi global state punya beberapa setter
+Global state juga disebut dengan reducer
+
 ## Custom Hooks & Testing
 
 
